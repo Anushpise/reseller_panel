@@ -1,0 +1,116 @@
+.my-courses, .certificates {
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.course-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.course-card, .certificate-card {
+  background: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  width: 250px;
+  position: relative;
+}
+
+.course-card img {
+  width: 100%;
+  border-radius: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.course-card h3, .certificate-card h3 {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.course-card p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+button {
+  background: #002aff;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #1e00ff;
+}
+
+.badge {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: #ff6b6b;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.3rem;
+  font-size: 0.7rem;
+}
+.my-courses {
+  padding: 2rem;
+}
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+.course-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  position: relative;
+  transition: 0.3s all ease;
+}
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+.course-img {
+  width: 100%;
+  border-radius: 8px;
+}
+.start-course {
+  margin-top: 10px;
+  padding: 0.5rem 1rem;
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.start-course:hover {
+  background-color: #4338ca;
+}
+.badge.purchased {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #10b981;
+  color: white;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+}
+.no-courses {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}

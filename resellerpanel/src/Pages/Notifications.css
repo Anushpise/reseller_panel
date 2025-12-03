@@ -1,0 +1,102 @@
+.notifications-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  max-width: 800px;
+  margin: 1rem auto;
+}
+
+.notifications-card h2 {
+  margin-bottom: 1rem;
+  color: #333;
+  text-align: center;
+}
+
+.notifications-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.notifications-card li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.notifications-card li.unread {
+  background: #f0f8ff;
+}
+
+.icon {
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.message {
+  flex: 1;
+  color: #555;
+}
+
+.time {
+  font-size: 0.8rem;
+  color: #999;
+}
+.notifications-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  max-width: 800px;
+  margin: 1rem auto;
+}
+
+.notifications-card h2 {
+  margin-bottom: 1rem;
+  color: #333;
+  text-align: center;
+}
+
+.notifications-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.notifications-card li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid #eee;
+  transition: background 0.3s;
+}
+
+.notifications-card li.unread {
+  background: #f0f8ff; /* light blue for unread */
+  font-weight: bold;
+}
+
+.notifications-card li:hover {
+  background: #e6f7ff;
+}
+
+.icon {
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.message {
+  flex: 1;
+  color: #555;
+  margin: 0 0.5rem;
+}
+
+.time {
+  font-size: 0.8rem;
+  color: #999;
+  white-space: nowrap;
+}

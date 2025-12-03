@@ -1,0 +1,142 @@
+.subscription-wrapper {
+  padding: 20px;
+}
+
+.sub-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  max-width: 500px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  margin-top: 20px;
+}
+
+.sub-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: bold;
+}
+
+.status.active {
+  background: #e7fce7;
+  color: #28a745;
+}
+
+.status.expired {
+  background: #ffeaea;
+  color: #d62828;
+}
+
+.sub-details p {
+  margin: 10px 0;
+  font-size: 15px;
+}
+
+.auto-tag {
+  background: #e4e9ff;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.renew-btn {
+  margin-top: 20px;
+  background: #4c6ef5;
+  color: #fff;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+.renew-btn:hover {
+  background: #3b5bdb;
+}
+.subscription-container {
+  padding: 25px;
+}
+
+.sub-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  width: 450px;
+  max-width: 100%;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.sub-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.label {
+  font-weight: 600;
+  color: #444;
+}
+
+.value {
+  font-weight: 500;
+  color: #222;
+}
+
+.status-badge {
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.status-green {
+  background: #d4ffe2;
+  color: #098f4e;
+}
+
+.status-yellow {
+  background: #fff5cc;
+  color: #c89700;
+}
+
+.status-red {
+  background: #ffe1e1;
+  color: #c93030;
+}
+
+.renew-btn {
+  width: 100%;
+  margin-top: 20px;
+  background: #4b7bec;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.renew-btn:disabled {
+  background: #bfc9e6;
+  cursor: not-allowed;
+}
+
+.renew-btn:hover:not(:disabled) {
+  background: #3d69cc;
+}

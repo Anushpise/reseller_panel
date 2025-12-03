@@ -1,0 +1,155 @@
+.invoice-download-page {
+  max-width: 1100px;
+  margin: 2.5rem auto;
+  padding: 1rem;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #222;
+}
+
+.top-row {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  margin-bottom:1rem;
+}
+
+.top-row h1 {
+  display:flex;
+  align-items:center;
+  gap:0.6rem;
+  font-size:1.4rem;
+}
+
+.actions {
+  display:flex;
+  gap:0.6rem;
+  align-items:center;
+}
+
+select {
+  padding:0.5rem 0.7rem;
+  border-radius:8px;
+  border:1px solid #ddd;
+  background:#fff;
+}
+
+.btn {
+  display:inline-flex;
+  align-items:center;
+  gap:0.6rem;
+  background:#0066ff;
+  color:white;
+  border:none;
+  padding:0.55rem 0.85rem;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.btn.outline {
+  background:transparent;
+  color:#0066ff;
+  border:1px solid #0066ff;
+}
+
+.btn:disabled {
+  opacity:0.6;
+  cursor:not-allowed;
+}
+
+.invoice-preview {
+  margin-top:1rem;
+  background: white;
+  padding:1.2rem;
+  border-radius:10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  color:#111;
+}
+
+/* Header */
+.inv-header {
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:1rem;
+  border-bottom:1px solid #eee;
+  padding-bottom:1rem;
+}
+
+.inv-header .left {
+  display:flex;
+  gap:1rem;
+  align-items:center;
+}
+
+.reseller-logo {
+  width:160px;
+  height:auto;
+  object-fit:contain;
+  border-radius:6px;
+  background:#fff;
+  padding:6px;
+  border:1px solid #f0f0f0;
+}
+
+.reseller-info h2 {
+  margin:0;
+  font-size:1.05rem;
+}
+
+.inv-header .right {
+  text-align:right;
+}
+
+/* To / billing */
+.inv-to {
+  display:flex;
+  justify-content:space-between;
+  margin:1rem 0;
+  gap:1rem;
+}
+
+.inv-billing p {
+  margin:0.25rem 0;
+}
+
+/* Table */
+.inv-table {
+  width:100%;
+  border-collapse:collapse;
+  margin-top:1rem;
+}
+
+.inv-table th,
+.inv-table td {
+  padding:0.8rem;
+  border:1px solid #eee;
+  text-align:left;
+}
+
+.inv-table thead th {
+  background:#f7fbff;
+}
+
+.inv-total {
+  margin-top:0.6rem;
+  font-size:1.05rem;
+}
+
+/* Footer */
+.inv-footer {
+  display:flex;
+  justify-content:space-between;
+  gap:1rem;
+  margin-top:1.2rem;
+  font-size:0.95rem;
+  color:#444;
+}
+
+/* Print-friendly */
+@media print {
+  body * { visibility: hidden; }
+  .invoice-preview, .invoice-preview * { visibility: visible; }
+  .invoice-preview { position: absolute; left: 0; top: 0; width: 100%; }
+}

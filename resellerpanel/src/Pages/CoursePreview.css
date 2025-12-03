@@ -1,0 +1,44 @@
+.cp-container {
+  padding: 30px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.cp-box {
+  display: flex;
+  gap: 25px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.cp-thumb {
+  width: 320px;
+  height: 200px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.cp-info {
+  flex: 1;
+}
+
+.cp-desc {
+  color: #666;
+  margin: 10px 0;
+}
+
+.cp-btn {
+  margin-top: 15px;
+  background: #6c63ff;
+  padding: 12px 20px;
+  border: none;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.cp-btn:hover {
+  background: #5951e8;
+}

@@ -1,0 +1,130 @@
+.renew-wrapper {
+  max-width: 1100px;
+  margin: auto;
+  padding: 30px;
+  background: #f5f7fa;
+  min-height: 100vh;
+}
+
+/* HEADER */
+.renew-header h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #222;
+}
+
+.renew-header p {
+  color: #666;
+  margin-top: 4px;
+  margin-bottom: 25px;
+}
+
+/* CURRENT PLAN BOX */
+.current-plan-box {
+  background: white;
+  padding: 22px;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.04);
+  margin-bottom: 30px;
+}
+
+.current-plan-box h3 {
+  font-size: 20px;
+  color: #222;
+  margin-bottom: 8px;
+}
+
+.current-price {
+  font-size: 22px;
+  font-weight: 700;
+  color: #2257b8;
+  margin-top: 6px;
+}
+
+/* SECTION TITLE */
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 18px;
+}
+
+/* PLANS GRID */
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+/* PLAN CARD */
+.plan-card-renew {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  transition: 0.2s;
+  position: relative;
+}
+
+.plan-card-renew:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+.popular {
+  border: 2px solid #1e88e5;
+}
+
+.popular-tag {
+  position: absolute;
+  top: -10px;
+  right: 12px;
+  background: #1e88e5;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.plan-card-renew h4 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.plan-price-renew {
+  font-size: 22px;
+  font-weight: 700;
+  color: #2257b8;
+  margin-bottom: 12px;
+}
+
+.plan-card-renew ul {
+  padding-left: 18px;
+  margin-bottom: 18px;
+}
+
+.plan-card-renew li {
+  margin-bottom: 6px;
+  color: #555;
+}
+
+/* BUTTON */
+.choose-btn {
+  width: 100%;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 10px;
+  background: #1e88e5;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.choose-btn:hover {
+  background: #1565c0;
+}
