@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { FaCheckCircle, FaClock, FaCreditCard, FaTimesCircle } from "react-icons/fa";
-import "./Subscription.css";
+import "../assets/css/Subscription.css";
 
 export default function SubscriptionPage() {
   const { reseller, subscriptionActive } = useSelector((state) => state.reseller || {});

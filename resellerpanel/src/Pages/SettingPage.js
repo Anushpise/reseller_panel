@@ -9,7 +9,8 @@ import {
   Typography,
   Grid,
 } from "@mui/material";
-import "./Settings.css"
+
+import "../assets/css/Settings.css";
 export default function SettingsPage() {
   const [activeTab, setActiveTab] = useState(0);
 
@@ -29,7 +30,7 @@ export default function SettingsPage() {
           <Tab label="Payment Settings" />
         </Tabs>
 
-        {/* GENERAL SETTINGS */}
+       
         {activeTab === 0 && (
           <Box sx={{ mt: 2 }}>
             <Typography variant="h6" sx={{ mb: 2, fontWeight: 600 }}>
@@ -86,7 +87,6 @@ export default function SettingsPage() {
           </Box>
         )}
 
-        {/* PAYMENT SETTINGS */}
         {activeTab === 1 && (
           <Box sx={{ mt: 2 }}>
             <Typography variant="h6" sx={{ mb: 2, fontWeight: 600 }}>

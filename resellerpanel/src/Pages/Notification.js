@@ -1,7 +1,7 @@
 import React from "react";
 import { FaDollarSign, FaBell, FaBookOpen, FaSyncAlt } from "react-icons/fa";
-import "./Notifications.css";
 
+import "../assets/css/Notifications.css";
 export default function Notifications({ notifications = [] }) {
   
   const getIcon = (type) => {

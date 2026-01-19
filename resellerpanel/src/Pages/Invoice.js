@@ -1,7 +1,7 @@
 import React from "react";
 import { FaDownload, FaEnvelope, FaFileInvoice } from "react-icons/fa";
-import "./invoice.css";
 
+import "../assets/css/invoice.css"
 export default function Invoice({ sale }) {
 const sampleSale = {
   id: "INV-2025-001",
@@ -12,7 +12,7 @@ const sampleSale = {
   date: "2025-12-02",
   gstin: "27ABCDE1234F1Z5",
   resellerLogo: "https://via.placeholder.com/120x60",
-  platformShare: 20 // %
+  platformShare: 20 
 };
 
   if (!sale) {
@@ -35,7 +35,7 @@ const sampleSale = {
 
   return (
     <div className="invoice-container">
-      {/* Header */}
+    
       <div className="invoice-header">
         <div>
           <h1>Branded GST Invoice</h1>
@@ -50,7 +50,7 @@ const sampleSale = {
 
       <hr />
 
-      {/* Student Info */}
+    
       <div className="invoice-section">
         <h3>Student Details</h3>
         <p><strong>Name:</strong> {sale.studentName}</p>
@@ -59,7 +59,6 @@ const sampleSale = {
 
       <hr />
 
-      {/* Course Info */}
       <div className="invoice-section">
         <h3>Course Purchased</h3>
         <p><strong>Course:</strong> {sale.courseName}</p>
@@ -69,7 +68,6 @@ const sampleSale = {
 
       <hr />
 
-      {/* GST Info */}
       <div className="invoice-section">
         <h3>GST Details</h3>
         <p><strong>Reseller GSTIN:</strong> {sale.gstin}</p>
@@ -79,7 +77,7 @@ const sampleSale = {
 
       <hr />
 
-      {/* Buttons */}
+     
       <div className="invoice-actions">
         <button className="download" onClick={handleDownload}>
           <FaDownload /> Download PDF

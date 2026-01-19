@@ -1,106 +1,145 @@
+
 import React, { useState, useEffect } from "react";
-import { FaRupeeSign } from "react-icons/fa";
-import "./SalesDashboard.css";
+import { FaRupeeSign, FaArrowUp } from "react-icons/fa";
+import "../assets/css/SalesDashboard.css";
 
 export default function SalesDashboard() {
-  const today = new Date().toLocaleDateString("en-CA"); // YYYY-MM-DD format
+  const today = new Date().toLocaleDateString("en-CA");
 
-  // SAMPLE DATA (you can replace with API)
   const initialData = [
-    { date: today, orders: 5, revenue: 3500, platformCut: 350, myShare: 3150 },
-    { date: "2025-12-01", orders: 12, revenue: 12450, platformCut: 1245, myShare: 11205 },
-    { date: "2025-11-30", orders: 20, revenue: 20400, platformCut: 2040, myShare: 18360 },
-    { date: "2025-11-29", orders: 15, revenue: 15750, platformCut: 1575, myShare: 14175 },
+    { date: today, orders: 8, revenue: 18450, platformCut: 1845, myShare: 16605 },
+    { date: "2025-12-04", orders: 15, revenue: 28900, platformCut: 2890, myShare: 26010 },
+    { date: "2025-12-03", orders: 22, revenue: 35700, platformCut: 3570, myShare: 32130 },
+    { date: "2025-12-02", orders: 18, revenue: 31200, platformCut: 3120, myShare: 28080 },
   ];
 
   const [salesData, setSalesData] = useState(initialData);
-  const [todaySales, setTodaySales] = useState(0);
-  const [monthlyEarnings, setMonthlyEarnings] = useState(
-    initialData.reduce((acc, row) => acc + row.myShare, 0)
-  );
+  const [todaySales, setTodaySales] = useState(initialData[0].myShare);
+  const [livePulse, setLivePulse] = useState(false);
 
-  // // Live counter for today's sales
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setTodaySales(prev => prev + Math.floor(Math.random() * 120));
 
-  //     // Update today's row
-  //     setSalesData(prev =>
-  //       prev.map(row =>
-  //         row.date === today
-  //           ? {
-  //               ...row,
-  //               revenue: row.revenue + Math.floor(Math.random() * 80),
-  //               myShare: row.myShare + Math.floor(Math.random() * 60),
-  //             }
-  //           : row
-  //       )
-  //     );
-  //   }, 1500);
+  useEffect(() => {
+    const salesAmounts = [999, 1499, 1999, 2499, 2999];
 
-  //   return () => clearInterval(interval);
-  // }, [today]);
+    const interval = setInterval(() => {
+      const newSale = salesAmounts[Math.floor(Math.random() * salesAmounts.length)];
+      const platformCut = Math.round(newSale * 0.10);
+      const myShare = newSale - platformCut;
+
+      setTodaySales(prev => prev + myShare);
+      setLivePulse(true);
+
+
+      setSalesData(prev => prev.map(row =>
+        row.date === today
+          ? {
+            ...row,
+            orders: row.orders + 1,
+            revenue: row.revenue + newSale,
+            platformCut: row.platformCut + platformCut,
+            myShare: row.myShare + myShare
+          }
+          : row
+      ));
+
+
+      setTimeout(() => setLivePulse(false), 1000);
+    }, Math.random() * 4000 + 3000);
+
+    return () => clearInterval(interval);
+  }, [today]);
+
+  const monthlyEarnings = salesData.reduce((acc, row) => acc + row.myShare, 0);
 
   return (
-    <div className="sales-dashboard">
-      <h1>Sales Dashboard</h1>
+    <div className="sales-dashboard min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 p-6">
 
-      <div className="cards">
-        <div className="card today">
-          <h2>Today's Sales</h2>
-          <p className="value">
-            <FaRupeeSign /> {todaySales.toLocaleString()}
-          </p>
-          <span className="tag"></span>
-        </div>
 
-        <div className="card month">
-          <h2>This Month Earnings</h2>
-          <p className="value">
-            <FaRupeeSign /> {monthlyEarnings.toLocaleString()}
-          </p>
-          <span className="tag"></span>
+      <div className="mb-8 text-center">
+        <h1 className="text-5xl font-bold text-gray-800 mb-3">Sales Dashboard</h1>
+        <p className="text-xl text-gray-600">Real-time earnings from your reseller portal</p>
+      </div>
+
+
+      <div className="fixed top-24 right-8 z-50">
+        <div className={`bg-red-600 text-white px-6 py-3 rounded-full shadow-2xl flex items-center gap-3 transition-all ${livePulse ? 'scale-110' : ''}`}>
+          <div className="w-4 h-4 bg-white rounded-full animate-ping absolute -left-1"></div>
+          <div className="w-4 h-4 bg-white rounded-full"></div>
+          <span className="font-bold text-lg">LIVE SALES ACTIVE</span>
         </div>
       </div>
 
-      {/* SALES TABLE */}
-      <div className="table-container">
-        <h3>Sales Overview</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Orders</th>
-              <th>Total Revenue</th>
-              <th>Platform Cut</th>
-              <th>Your Share</th>
-              <th>Trend</th>
-            </tr>
-          </thead>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
 
-          <tbody>
-            {salesData.map((row, idx) => (
-              <tr
-                key={idx}
-                className={row.date === today ? "today-row" : ""}
-              >
-                <td>{row.date}</td>
-                <td>{row.orders}</td>
-                <td>
-                  <FaRupeeSign /> {row.revenue.toLocaleString()}
-                </td>
-                <td>
-                  <FaRupeeSign /> {row.platformCut.toLocaleString()}
-                </td>
-                <td>
-                  <FaRupeeSign /> {row.myShare.toLocaleString()}
-                </td>
-                <td>📈</td>
+        <div className="cards-wrapper fade-in">
+
+
+          <div className="earn-card today-card">
+            <span className="card-label">TODAY</span>
+            <h2>Today's Earnings</h2>
+
+            <p className={`earn-value ${livePulse ? "pulse-up" : ""}`}>
+              ₹{todaySales.toLocaleString("en-IN")}
+            </p>
+
+            <div className="sub-info">
+              <FaArrowUp /> Live updates active
+            </div>
+          </div>
+
+          <div className="earn-card month-card">
+            <span className="card-label-green">MONTH</span>
+            <h2>This Month Earnings</h2>
+
+            <p className="earn-value">
+              ₹{monthlyEarnings.toLocaleString("en-IN")}
+            </p>
+
+            <div className="sub-info-green">
+              Keep growing.
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+ 
+      <div className="max-w-7xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden">
+        <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white p-6">
+          <h3 className="text-2xl font-bold">Daily Sales Overview</h3>
+        </div>
+        <div className="overflow-x-auto">
+          <table className="w-full">
+            <thead className="bg-gray-50 border-b-2">
+              <tr>
+                <th className="px-6 py-4 text-left">Date</th>
+                <th className="px-6 py-4 text-left">Orders</th>
+                <th className="px-6 py-4 text-left">Total Revenue</th>
+                <th className="px-6 py-4 text-left">Platform Cut (10%)</th>
+                <th className="px-6 py-4 text-left font-bold text-green-600">Your Share</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {salesData.map((row, idx) => (
+                <tr
+                  key={idx}
+                  className={`border-b hover:bg-purple-50 transition ${row.date === today ? "bg-purple-50 font-bold" : ""}`}
+                >
+                  <td className="px-6 py-5">
+                    {row.date === today ? "Today" : row.date}
+                    {row.date === today && <span className="ml-3 bg-red-500 text-white text-xs px-3 py-1 rounded-full">LIVE</span>}
+                  </td>
+                  <td className="px-6 py-5">{row.orders}</td>
+                  <td className="px-6 py-5">₹{row.revenue.toLocaleString("en-IN")}</td>
+                  <td className="px-6 py-5 text-red-600">-₹{row.platformCut.toLocaleString("en-IN")}</td>
+                  <td className="px-6 py-5 text-green-600 font-bold">₹{row.myShare.toLocaleString("en-IN")}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
+
     </div>
   );
 }

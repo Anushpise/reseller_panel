@@ -1,112 +1,205 @@
+
 import React from "react";
 import { useSelector } from "react-redux";
-import "./ResellerProfile.css";
+import "../assets/css/ResellerProfile.css";
+import { 
+  FaUser, 
+  FaEnvelope, 
+  FaPhone, 
+  FaBuilding, 
+  FaGlobe, 
+  FaInstagram, 
+  FaFacebook, 
+  FaLinkedin, 
+  FaYoutube,
+  FaEdit, 
+  FaCheckCircle, 
+  FaClock, 
+  FaRupeeSign, 
+  FaCrown,
+  FaBookOpen
+} from "react-icons/fa";
 
-const ResellerProfile = () => {
-  const { user, resellerBranding } = useSelector((state) => state.user);
+export default function ResellerProfile() {
+  const { reseller, subscriptionActive, subscription } = useSelector(state => state.reseller);
 
-  if (!user) {
-    return <div className="p-6">Please login to view your profile.</div>;
+  if (!reseller) {
+    return (
+      <div className="profile-loading">
+        <p>Please login to view your profile.</p>
+      </div>
+    );
   }
 
+  const stats = {
+    totalStudents: reseller.totalStudents || 842,
+    totalEarnings: reseller.totalEarnings || 1248500,
+    totalCourses: reseller.totalCourses || 12,
+    activeSince: "15 Jan 2024"
+  };
+
   return (
-    <div className="profile-wrapper">
+    <div className="reseller-profile-master">
 
      
-      <div className="profile-header"> 
-        <h2>Reseller Profile</h2>
-        <p>View & Update your profile details</p>
-      </div>
-
-      <div className="stats-grid">
-        <div className="stat-box">
-          <h3>{user.totalStudents || 0}</h3>
-          <p>Total Students</p>
-        </div>
-        <div className="stat-box">
-          <h3>{user.totalCourses || 0}</h3>
-          <p>Courses</p>
-        </div>
-        <div className="stat-box">
-          <h3>{user.totalSales || "₹0"}</h3>
-          <p>Total Sales</p>
-        </div>
-        <div className="stat-box">
-          <h3>{user.activeSubscriptions || 0}</h3>
-          <p>Active Subscriptions</p>
-        </div>
-      </div>
-
-      {/* PERSONAL INFO */}
-      <div className="profile-section">
-        <div className="section-header">
-          <h3>Your Information</h3>
-          <button className="edit-btn">Edit</button>
-        </div>
-
-        <div className="profile-card">
-          <img src={user.profileImg || "/default-avatar.png"} className="profile-img" alt="" />
-          <div className="profile-info">
-            <p><strong>Name:</strong> {user.name}</p>
-            <p><strong>Email:</strong> {user.email}</p>
-            <p><strong>Phone:</strong> {user.phone}</p>
+      <div className="profile-hero">
+        <div className="hero-content">
+          <div className="avatar-large">
+            {reseller.profileImg ? (
+              <img src={reseller.profileImg} alt={reseller.name} />
+            ) : (
+              <div className="avatar-placeholder">
+                <FaUser />
+              </div>
+            )}
+          </div>
+          <div className="hero-info">
+            <h1>{reseller.name}</h1>
+            <p className="business-name">
+              <FaBuilding /> {reseller.businessName || "Digital Academy"}
+            </p>
+            <div className="badges">
+              <span className="badge premium">
+                <FaCrown /> Premium Reseller
+              </span>
+              <span className="badge active">
+                <FaCheckCircle /> Active Since {stats.activeSince}
+              </span>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* COMPANY BRANDING */}
-      <div className="profile-section">
-        <div className="section-header">
-          <h3>Company Branding</h3>
-          <button className="edit-btn">Update</button>
+    
+      <div className="stats-dashboard">
+        <div className="stat-card">
+          <FaUser className="icon" />
+          <div>
+            <h3>{stats.totalStudents.toLocaleString()}</h3>
+            <p>Total Students</p>
+          </div>
         </div>
-
-        <div className="profile-card">
-          <img src={resellerBranding.logoUrl || "/placeholder-logo.png"} className="company-logo" alt="Logo" />
-          <div className="profile-info">
-            <p><strong>Company:</strong> {resellerBranding.companyName || user.name}</p>
-            <p><strong>Status:</strong> Branding {resellerBranding.logoUrl ? "Completed ✔" : "Pending"}</p>
+        <div className="stat-card highlight">
+          <FaRupeeSign className="icon" />
+          <div>
+            <h3>₹{stats.totalEarnings.toLocaleString()}</h3>
+            <p>Total Earnings</p>
+          </div>
+        </div>
+        <div className="stat-card">
+          <FaBookOpen className="icon" />
+          <div>
+            <h3>{stats.totalCourses}</h3>
+            <p>Courses Selling</p>
+          </div>
+        </div>
+        <div className="stat-card success">
+          <FaCheckCircle className="icon" />
+          <div>
+            <h3>{subscriptionActive ? "Active" : "Inactive"}</h3>
+            <p>Subscription Status</p>
           </div>
         </div>
       </div>
 
-      {/* PLAN INFO */}
-      <div className="profile-section">
-        <div className="section-header">
-          <h3>Subscription Plan</h3>
-          <button className="edit-btn">Upgrade</button>
+     
+      <div className="profile-details">
+
+     
+        <div className="info-section">
+          <div className="section-header">
+            <h2>Personal Information</h2>
+            <button className="edit-btn"><FaEdit /> Edit</button>
+          </div>
+          <div className="info-grid">
+            <div className="info-item">
+              <FaUser /> <strong>Name:</strong> {reseller.name}
+            </div>
+            <div className="info-item">
+              <FaEnvelope /> <strong>Email:</strong> {reseller.email}
+            </div>
+            <div className="info-item">
+              <FaPhone /> <strong>Phone:</strong> {reseller.phone || "+91 98765 43210"}
+            </div>
+            <div className="info-item">
+              <FaGlobe /> <strong>Website:</strong> 
+              {reseller.website ? <a href={reseller.website} target="_blank" rel="noreferrer">{reseller.website}</a> : "Not added"}
+            </div>
+          </div>
         </div>
 
-        <div className="plan-card">
-          <h4>{user.plan?.name || "Free Plan"}</h4>
-          <div className="plan-price">{user.plan?.price || "₹0"}</div>
-
-          <ul>
-            {user.plan?.features?.map((f, i) => (
-              <li key={i}>{f}</li>
-            ))}
-          </ul>
-
-          <p><strong>Expiry:</strong> {user.plan?.expiry || "N/A"}</p>
-
-          <button className="renew-btn">Renew Plan</button>
+    
+        <div className="info-section">
+          <div className="section-header">
+            <h2>Business Branding</h2>
+            <button className="edit-btn">Update Branding</button>
+          </div>
+          <div className="branding-preview">
+            <div className="logo-preview">
+              {reseller.logoUrl ? (
+                <img src={reseller.logoUrl} alt="Logo" />
+              ) : (
+                <div className="logo-placeholder">Your Logo</div>
+              )}
+            </div>
+            <div className="branding-info">
+              <p><strong>Company:</strong> {reseller.businessName}</p>
+              <p><strong>Branding Status:</strong> 
+                <span className={reseller.logoUrl ? "status-complete" : "status-pending"}>
+                  {reseller.logoUrl ? "Completed" : "Pending Setup"}
+                </span>
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
 
-      {/* ACCOUNT SETTINGS */}
-      <div className="profile-section">
-        <div className="section-header">
-          <h3>Account Settings</h3>
+  
+        <div className="info-section">
+          <div className="section-header">
+            <h2>Subscription Plan</h2>
+            <button className="upgrade-btn">Upgrade Plan</button>
+          </div>
+          <div className="plan-card">
+            <div className="plan-header">
+              <h3>{subscription?.name || "Pro Reseller Plan"}</h3>
+              <div className="plan-price">₹{subscription?.price || "999"}<small>/year</small></div>
+            </div>
+            <ul className="features">
+              <li>Unlimited Students</li>
+              <li>Full White-Label Portal</li>
+              <li>90% Revenue Share</li>
+              <li>Priority Support</li>
+              <li>Custom Domain</li>
+            </ul>
+            <div className="plan-footer">
+              <p><FaClock /> Next Billing: {subscription?.nextBilling || "15 Jan 2026"}</p>
+              <button className="renew-btn">Renew Now</button>
+            </div>
+          </div>
         </div>
 
-        <div className="settings-card">
-          <button>Change Password</button>
-          <button>Payment Settings</button>
-          <button>Delete Account</button>
+        
+        <div className="info-section">
+          <div className="section-header">
+            <h2>Social Media</h2>
+          </div>
+          <div className="social-links">
+            <a href={reseller.instagram || "#"} className="social-btn instagram">
+              <FaInstagram /> Instagram
+            </a>
+            <a href={reseller.facebook || "#"} className="social-btn facebook">
+              <FaFacebook /> Facebook
+            </a>
+            <a href={reseller.linkedin || "#"} className="social-btn linkedin">
+              <FaLinkedin /> LinkedIn
+            </a>
+            <a href={reseller.youtube || "#"} className="social-btn youtube">
+              <FaYoutube /> YouTube
+            </a>
+          </div>
         </div>
+
       </div>
     </div>
   );
-};
-
-export default ResellerProfile;
+}

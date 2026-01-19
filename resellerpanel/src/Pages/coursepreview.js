@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import "./CoursePreview.css";
+import "../assets/css/CoursePreview.css";
 
 const allCourses = [
   { id: 1, title: "Chat GPT for Marketing", category: "Marketing", instructor: "Brad Traversy", description: "Master Chat GPT marketing in Hindi.", duration: "10 Hours", recommendedPrice: 499, status: "Available", thumbnail: "https://via.placeholder.com/400x200?text=Chat+GPT+for+Marketing" },
@@ -21,15 +21,11 @@ export default function CoursePreview() {
   const { id } = useParams();
   const navigate = useNavigate();
   const course = allCourses.find((c) => c.id === parseInt(id));
+if (!course) {
+  navigate("/courses");
+  return null;
+}
 
-  if (!course) {
-    return (
-      <div className="cp-container">
-        <h2>Course Not Found</h2>
-        <button onClick={() => navigate(-1)}>Go Back</button>
-      </div>
-    );
-  }
 
   return (
     <div className="cp-container">

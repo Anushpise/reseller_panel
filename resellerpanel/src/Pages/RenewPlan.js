@@ -1,6 +1,6 @@
 import React from "react";
-import "./RenewPlan.css";
 
+import "../assets/css/RenewPlan.css";
 const RenewPlan = () => {
   const plan = {
     currentPlan: "Pro Annual Plan",
@@ -38,13 +38,12 @@ const RenewPlan = () => {
 
   return (
     <div className="renew-wrapper">
-      {/* HEADER */}
+     
       <div className="renew-header">
         <h2>Renew / Upgrade Subscription</h2>
         <p>Choose the best plan that fits your business</p>
       </div>
 
-      {/* CURRENT PLAN BOX */}
       <div className="current-plan-box">
         <h3>Current Plan: {plan.currentPlan}</h3>
         <p>
@@ -53,7 +52,7 @@ const RenewPlan = () => {
         <p className="current-price">{plan.price}</p>
       </div>
 
-      {/* AVAILABLE PLANS */}
+ 
       <h3 className="section-title">Available Plans</h3>
       <div className="plans-grid">
         {plan.plans.map((p, i) => (

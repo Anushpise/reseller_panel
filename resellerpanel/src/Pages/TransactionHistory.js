@@ -1,6 +1,6 @@
 import React from "react";
-import "./Payouts.css";
 
+import "../assets/css/Payouts.css";
 export default function TransactionHistory() {
   const transactions = [
     {

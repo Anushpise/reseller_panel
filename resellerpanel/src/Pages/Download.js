@@ -2,11 +2,9 @@ import React, { useRef, useState } from "react";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 import { FaDownload, FaEnvelope, FaFileInvoice } from "react-icons/fa";
-import "./Download.css";
+import "../assets/css/Download.css";
 
-/**
- * Simple sample sales data. Replace with API data as needed.
- */
+
 const sampleSales = [
   {
     id: "INV-2025-001",
@@ -63,7 +61,7 @@ export default function InvoiceDownload() {
 
   const calcGst = (amount, percent) => {
     const gst = (amount * percent) / 100;
-    const taxable = amount - gst; // if amount includes GST adjust accordingly; here we treat amount as base for simplicity
+    const taxable = amount - gst; 
     return { gst, taxable };
   };
 
@@ -71,7 +69,7 @@ export default function InvoiceDownload() {
     setIsGenerating(true);
     try {
       const input = invoiceRef.current;
-      // html2canvas options to render CORS images (may require server config on external images)
+     
       const canvas = await html2canvas(input, {
         scale: 2,
         useCORS: true,
@@ -94,7 +92,7 @@ export default function InvoiceDownload() {
   };
 
   const handleEmail = () => {
-    // Simple mailto fallback. For real email, call backend / transactional email API.
+   
     const subject = encodeURIComponent(`Invoice ${selectedSale.id}`);
     const body = encodeURIComponent(
       `Hi ${selectedSale.studentName},\n\nPlease find your invoice ${selectedSale.id} for ${selectedSale.course}.\n\nThanks,\n${selectedSale.reseller.name}`
@@ -134,7 +132,7 @@ export default function InvoiceDownload() {
         </div>
       </div>
 
-      {/* Invoice preview (this DOM node gets rendered to canvas/pdf) */}
+     
       <div className="invoice-preview" ref={invoiceRef}>
         <header className="inv-header">
           <div className="left">

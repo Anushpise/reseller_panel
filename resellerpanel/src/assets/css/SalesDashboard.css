@@ -1,0 +1,727 @@
+.sales-dashboard {
+  font-family: 'Arial', sans-serif;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.cards {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 250px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #111;
+  margin-bottom: 0.5rem;
+}
+
+.tag {
+  font-size: 0.9rem;
+  color: #999;
+}
+
+/* Special styling */
+.today {
+  border-top: 4px solid #ff6b6b;
+}
+
+.month {
+  border-top: 4px solid #1dd1a1;
+}
+.sales-dashboard {
+  font-family: 'Arial', sans-serif;
+  padding: 2rem;
+  background: #ffffff;
+  min-height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+thead {
+  background: #333;
+  color: white;
+  position: sticky;
+  top: 0;
+}
+
+th, td {
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+tbody tr.even {
+  background: #f5f5f5;
+}
+
+tbody tr.odd {
+  background: white;
+}
+
+tbody tr.today-row {
+  border-left: 4px solid #ff6b6b;
+  font-weight: bold;
+  background: #fff7f7;
+}
+
+tbody tr:hover {
+  background: #e0f7ff;
+}
+
+td svg {
+  vertical-align: middle;
+  margin-right: 4px;
+}
+/* General page styling */
+.sales-dashboard {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.sales-dashboard h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  color: #222;
+}
+
+/* Cards container */
+.cards {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Individual cards */
+.card {
+  flex: 1 1 300px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.card h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.card .value {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #0077ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.card .tag {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Specific card colors (optional) */
+.card.today {
+  border-top: 4px solid #ff5722;
+}
+
+.card.month {
+  border-top: 4px solid #4caf50;
+}
+
+/* Table styling */
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th, td {
+  padding: 0.8rem 1rem;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  font-size: 0.95rem;
+}
+
+th {
+  background-color: #f5f5f5;
+  font-weight: 600;
+}
+
+tr.even {
+  background-color: #fafafa;
+}
+
+tr.odd {
+  background-color: #fff;
+}
+
+tr.today-row {
+  background-color: #e0f7fa;
+  font-weight: bold;
+}
+
+td:last-child {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  table th, table td {
+    font-size: 0.85rem;
+    padding: 0.6rem 0.8rem;
+  }
+}
+.sales-dashboard {
+  margin: 3rem auto;
+  padding: 1rem;
+  font-family: "Inter", sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.cards {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #ffffff;
+  padding: 2rem;
+  width: 300px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.card h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+}
+
+.value {
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: #0066ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.tag {
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.table-container {
+  margin-top: 3rem;
+}
+
+.table-container h3 {
+  margin-bottom: 1rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+}
+
+thead {
+  background: #f0f4ff;
+}
+
+tbody tr:nth-child(even) {
+  background: #fafafa;
+}
+
+.today-row {
+  background: #e8f2ff !important;
+  font-weight: 600;
+}
+/* -----------------------------------------------------------
+   GLOBAL WRAPPER
+----------------------------------------------------------- */
+.sales-dashboard {
+  font-family: "Inter", sans-serif;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* -----------------------------------------------------------
+   LIVE SALES BADGE
+----------------------------------------------------------- */
+.live-badge {
+  position: fixed;
+  top: 110px;
+  right: 30px;
+  background: #e60023;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 50px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 1rem;
+  z-index: 999;
+  transition: 0.3s ease;
+}
+
+.live-badge.pulse {
+  transform: scale(1.08);
+}
+
+/* ping animation circle inside badge */
+.live-circle {
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-radius: 50%;
+  position: relative;
+}
+
+.live-circle::after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  opacity: 0.6;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: ping 1.2s infinite;
+}
+
+@keyframes ping {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+/* -----------------------------------------------------------
+   EARNING CARDS
+----------------------------------------------------------- */
+.card-box {
+  background: #fff;
+  border-radius: 22px;
+  padding: 2.5rem;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-box:hover {
+  transform: translateY(-6px);
+}
+
+.card-tag {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #6a00ff;
+  color: #fff;
+  padding: 10px 20px;
+  border-bottom-left-radius: 20px;
+  font-weight: 700;
+}
+
+/* Today card highlight */
+.today-anim {
+  transition: 0.4s ease;
+}
+
+.today-anim.live {
+  color: #0faa44 !important;
+}
+
+/* -----------------------------------------------------------
+   TABLE
+----------------------------------------------------------- */
+.sales-table-wrapper {
+  margin-top: 3rem;
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.sales-table-header {
+  background: linear-gradient(90deg, #7c3aed, #ec4899);
+  padding: 1.5rem;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  padding: 1rem 1.5rem;
+  background: #f7f7f7;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+td {
+  padding: 1.1rem 1.5rem;
+  font-size: 1rem;
+  border-bottom: 1px solid #efefef;
+}
+
+tbody tr:hover {
+  background: #f6edff;
+}
+
+.today-row {
+  background: #f3e8ff !important;
+  font-weight: 700;
+}
+
+.live-pill {
+  background: #d50000;
+  color: #fff;
+  padding: 3px 12px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* -----------------------------------------------------------
+   RESPONSIVE
+----------------------------------------------------------- */
+@media (max-width: 768px) {
+  
+  .live-badge {
+    top: 90px;
+    right: 10px;
+    padding: 10px 20px;
+  }
+
+  table th,
+  table td {
+    font-size: 0.85rem;
+  }
+}
+/* Page Layout */
+.sales-dashboard {
+  font-family: "Inter", sans-serif;
+}
+
+/* Live Badge */
+.live-badge {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+/* Pulse effect (already handled in JSX but extra smoothness here) */
+.scale-110 {
+  transform: scale(1.10);
+}
+
+/* Big Cards */
+.bg-card {
+  background: white;
+  border-radius: 30px;
+  padding: 35px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+/* TODAY Ribbon */
+.today-ribbon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #7c3aed;
+  color: white;
+  padding: 10px 22px;
+  border-bottom-left-radius: 25px;
+  font-weight: bold;
+}
+
+/* Highlight Animation */
+@keyframes pulseGreen {
+  0% { color: #10b981; }
+  100% { color: inherit; }
+}
+
+.live-pulse {
+  animation: pulseGreen 1s ease-out;
+}
+
+/* Monthly Earnings Card */
+.monthly-card {
+  border-radius: 30px;
+  color: white;
+  padding: 35px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: #fafafa;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+th {
+  padding: 18px;
+  font-weight: 600;
+  text-align: left;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+td {
+  padding: 18px;
+  font-size: 1rem;
+  color: #555;
+}
+
+tbody tr {
+  transition: 0.2s;
+}
+
+tbody tr:hover {
+  background: #f3e8ff !important;
+}
+
+tbody tr.bg-purple-50 {
+  background: #f3e8ff !important;
+}
+
+/* LIVE Tag inside table */
+.live-tag {
+  background: red;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+/* Gradient Header */
+.table-header {
+  background: linear-gradient(to right, #7c3aed, #db2777);
+  color: rgb(0, 0, 0);
+  padding: 1.5rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+/* Smooth fade animation */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeInUp 0.8s ease;
+}
+/* Wrapper */
+.cards-wrapper {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+/* Base Card */
+.earn-card {
+  background: #ffffff;
+  width: 350px;
+  padding: 2.2rem;
+  border-radius: 25px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+  position: relative;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.earn-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Card Labels */
+.card-label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #7c3aed;
+  color: white;
+  padding: 10px 20px;
+  border-bottom-left-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.card-label-green {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #10b981;
+  color: white;
+  padding: 10px 20px;
+  border-bottom-left-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+/* Titles */
+.earn-card h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: #333;
+}
+
+/* Main Number */
+.earn-value {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #7c3aed, #ec4899);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 1rem;
+}
+
+/* Live pulse when sale happens */
+.pulse-up {
+  animation: popUp 0.5s ease-out;
+}
+
+@keyframes popUp {
+  0% { transform: scale(1); color: #22c55e; }
+  100% { transform: scale(1.05); color: inherit; }
+}
+
+/* Sub text */
+.sub-info {
+  margin-top: 0.5rem;
+  color: #6b21a8;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  align-items: center;
+}
+
+.sub-info-green {
+  margin-top: 0.5rem;
+  color: #065f46;
+  font-weight: 600;
+}
+
+/* Animation */
+.fade-in {
+  animation: fadeInUp 0.7s ease;
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(25px); }
+  100% { opacity: 1; transform: translateY(0); }
+}

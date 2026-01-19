@@ -1,48 +1,64 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { resellerLogin } from "../Store/ResellerSlice";
 import { loginReseller } from "../api/Resellerapi";
-import "./Login.css";
+import {  useSelector } from "react-redux";
+import { fetchBranding } from "../Store/Brandingslice";
 
+
+
+import "../assets/css/Login.css";
 const ResellerLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
   const dispatch = useDispatch();
+const { branding } = useSelector((state) => state.reseller);
+
+useEffect(() => {
+  dispatch(fetchBranding());
+}, []);
+
+  const navigate = useNavigate();
+
 
   const handleLogin = async (e) => {
-    e.preventDefault();
-    setError("");
-    setLoading(true);
+  e.preventDefault();
+  setError("");
+  setLoading(true);
 
-    try {
-      const res = await loginReseller({ email: email.trim(), password });
-      const { reseller } = res.data;
+  try {
+    const res = await loginReseller({ email: email.trim(), password });
+    const { reseller } = res.data;
 
-      const payload = {
-        reseller: {
-          name: reseller.name || reseller.businessName || "Reseller",
-          email: reseller.email,
-          image: reseller.logo || ""
-        },
+    localStorage.setItem("token", res.data.token);
+
+    await dispatch(fetchBranding());
+
+    const payload = {
+      reseller: {
+        name: reseller.name || reseller.businessName || "Reseller",
+        email: reseller.email,
+        image: reseller.logo || ""
+      },
       subscriptionActive: reseller.subscriptionActive || false,
-  subscription: reseller.subscription || null, 
+      subscription: reseller.subscription || null,
+    };
+
+    dispatch(resellerLogin(payload));
+    localStorage.setItem("reseller", JSON.stringify(payload));
+
+    alert("Login Successful!");
+    navigate("/");
+  } catch (err) {
+    setError(err.response?.data?.message || "Invalid email or password");
+  } finally {
+    setLoading(false);
+  }
 };
 
-      dispatch(resellerLogin(payload));
-      localStorage.setItem("reseller", JSON.stringify(payload));
-
-      alert("Login Successful!");
-      navigate("/dashboard");
-    } catch (err) {
-      setError(err.response?.data?.message || "Invalid email or password");
-    } finally {
-      setLoading(false);
-    }
-  };
 
   return (
     <div className="container-xxl py-2 mt-4">

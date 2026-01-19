@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { TextField, Button, Box, Typography, Paper, CircularProgress } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { registerReseller } from "../api/Resellerapi";
-import "./Register.css";
 
+
+import "../assets/css/Register.css";
 const Register = () => {
   const navigate = useNavigate();
   const [form, setForm] = useState({
@@ -12,7 +13,7 @@ const Register = () => {
     phone: "",
     businessName: "",
     password: "",
-    domain: "" 
+
   });
   const [loading, setLoading] = useState(false);
 
@@ -32,9 +33,10 @@ const Register = () => {
         email: form.email.toLowerCase().trim(),
         phone: form.phone,
         password: form.password,
-        domain: form.domain?.trim() 
-      });
 
+      });
+      localStorage.setItem("resellerEmail", form.email);
+      localStorage.setItem("resellerPhone", form.phone);
       alert("Registration Successful! Redirecting to payment...");
       navigate("/onboarding/payment");
 
@@ -57,7 +59,6 @@ const Register = () => {
         <TextField label="Email Address" name="email" type="email" fullWidth margin="normal" value={form.email} onChange={handleChange} required />
         <TextField label="Phone Number" name="phone" fullWidth margin="normal" value={form.phone} onChange={handleChange} />
         <TextField label="Password" type="password" name="password" fullWidth margin="normal" value={form.password} onChange={handleChange} required />
-        <TextField label="Domain (optional)" name="domain" fullWidth margin="normal" value={form.domain} onChange={handleChange} />
 
         <Button
           fullWidth

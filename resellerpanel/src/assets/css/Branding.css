@@ -1,0 +1,200 @@
+/* src/pages/reseller/Branding.css */
+.branding-wrapper {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.header h1 {
+  font-size: 38px;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+.header p {
+  font-size: 18px;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Sections */
+section {
+  background: white;
+  border-radius: 24px;
+  padding: 40px;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  border: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+section h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 28px;
+  padding-left: 14px;
+  border-left: 5px solid #6C63FF;
+}
+
+/* Grid System */
+.grid {
+  display: grid;
+
+  gap: 24px;
+}
+
+.grid > * {
+  grid-column: span 6;
+}
+
+.col-span-2 {
+  grid-column: span 12;
+}
+
+/* Inputs */
+.input {
+  width: 100%;
+  padding: 16px 18px;
+  border-radius: 16px;
+  border: 1.5px solid #e0e0e0;
+  background: #fafafa;
+  font-size: 15px;
+  transition: all 0.25s ease;
+  font-weight: 500;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #6C63FF;
+  background: white;
+  box-shadow: 0 0 0 4px rgba(108, 99, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+textarea.input {
+  min-height: 120px;
+  resize: vertical;
+}
+
+select.input {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%236b7280' viewBox='0 0 20 20'%3E%3Cpath d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 12px;
+}
+
+/* File Input */
+.file-input {
+  padding: 40px 20px !important;
+  border: 2px dashed #ccc !important;
+  background: #f8f9ff !important;
+  text-align: center;
+  cursor: pointer;
+  font-size: 15px;
+  color: #555;
+}
+
+.file-input:hover {
+  border-color: #6C63FF !important;
+  background: #f3f0ff !important;
+}
+
+/* Labels */
+.label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #333;
+  font-size: 15px;
+}
+
+/* Color Picker */
+.color-picker {
+  width: 80px;
+  height: 60px;
+  border-radius: 16px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.color-picker:hover {
+  transform: scale(1.1);
+}
+
+/* Checkbox */
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 0;
+  font-size: 16px;
+}
+
+.checkbox-row input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+  accent-color: #6C63FF;
+  cursor: pointer;
+}
+
+/* Save Button */
+.save-btn {
+  background: linear-gradient(135deg, #6C63FF, #4c47b8);
+  color: white;
+  padding: 18px 50px;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 18px;
+  border: none;
+  cursor: pointer;
+  min-width: 320px;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(108, 99, 255, 0.3);
+}
+
+.save-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(108, 99, 255, 0.4);
+}
+
+.save-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .grid > * {
+    grid-column: span 12 !important;
+  }
+  section {
+    padding: 30px 24px;
+    margin-bottom: 30px;
+  }
+  .header h1 {
+    font-size: 32px;
+  }
+  .save-btn {
+    width: 100%;
+    font-size: 18px;
+  }
+}

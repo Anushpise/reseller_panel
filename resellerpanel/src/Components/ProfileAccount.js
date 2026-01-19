@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateProfileAPI } from "../api/Resellerapi";
 import { resellerLogin } from "../Store/ResellerSlice";
-import "../Pages/Settings.css";
+import "../assets/css/Settings.css";
 
 export default function ProfileSettings() {
   const dispatch = useDispatch();

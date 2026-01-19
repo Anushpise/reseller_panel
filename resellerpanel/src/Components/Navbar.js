@@ -5,7 +5,7 @@ import { resellerLogout } from "../Store/ResellerSlice";
 
 import { FaSignOutAlt, FaBell } from "react-icons/fa";
 import Notifications from "../Pages/Notification";
-import "./Navbar.css";
+import "../assets/css/Navbar.css";
 
 export default function Navbar() {
   const { reseller } = useSelector((state) => state.reseller || {});
@@ -22,70 +22,70 @@ export default function Navbar() {
     return p.length === 1
       ? p[0][0].toUpperCase()
       : (p[0][0] + p[1][0]).toUpperCase();
-  }; 
-  const menuItems = [
+  }; const menuItems = [
   {
-    title: "Home",
+    title: "Dashboard",
     children: [
-      { name: "Overview", link: "/home" },
-      { name: "Earnings Summary", link: "/home/earnings" },
-      { name: "Payout Status", link: "/home/payouts" }
-    ],
+      { name: "Today Sales", link: "/" },
+      { name: "Monthly Overview", link: "/dashboard/monthly" }
+    ]
   },
-
+  {
+    title: "Onboarding",
+    children: [
+      { name: "Reseller Signup", link: "/register" },
+      { name: "Subscription Plan", link: "/onboarding/subscription" },
+      { name: "Make Payment", link: "/onboarding/payment" },
+      { name: "Activation Success", link: "/onboarding/activation" }
+    ]
+  },
+  {
+    title: "Catalog",
+    children: [
+      { name: "All Courses", link: "/courses" },
+      { name: "Course Preview", link: "/courses/preview" },
+      { name: "Set Selling Price", link: "/courses/price" },
+      { name: "Demo Portal", link: "/demo" }
+    ]
+  },
   {
     title: "Branding",
     children: [
-      { name: "Company Settings", link: "/branding/settings" },
-      { name: "Logo & Theme", link: "/branding/theme" },
-      { name: "Branded Invoices", link: "/branding/invoices" }
-    ],
+      { name: "Logo & Theme", link: "/branding" },
+      { name: "Invoice Settings", link: "/branding/invoice-config" }
+    ]
   },
-
   {
-    title: "Courses",
+    title: "Access",
     children: [
-      { name: "Available Courses", link: "/courses" },
-      { name: "Course Preview", link: "/courses/preview/:id" },
-      { name: "Set Selling Price", link: "/courses/price/:id" },
-      { name: "Demo Access", link: "/courses/demo" }
-    ],
+      { name: "My Learning (Free)", link: "/access/my-learning" },
+      { name: "Demo Control Panel", link: "/access/demo-control" }
+    ]
   },
-
+  {
+    title: "Finance",
+    children: [
+      { name: "Earnings Overview", link: "/finance/earnings" },
+      { name: "Billing & Invoices", link: "/finance/billing" },
+      { name: "Monthly Statement", link: "/finance/statement" }
+    ]
+  },
   {
     title: "Orders",
     children: [
-      { name: "Order List", link: "/orders" },
-      { name: "Order Details", link: "/orders/:id" }
-    ],
+      { name: "All Orders", link: "/orders" },
+    
+    ]
   },
-
+ 
   {
-    title: "Earnings",
+    title: "Settings",
     children: [
-      { name: "Earnings Summary", link: "/earnings" },
-      { name: "Payout Status", link: "/earnings/payouts" },
-      { name: "Monthly Statement", link: "/earnings/statement" }
-    ],
-  },
-
-  {
-    title: "Invoices",
-    children: [
-      { name: "GST Configuration", link: "/gst/config" },
-      { name: "Download / Email Invoice", link: "/invoices/send" }
-    ],
-  },
-
-  {
-    title: "Account",
-    children: [
-      { name: "Profile Settings", link: "/settings/profile" },
+      { name: "Profile", link: "/settings/profile" },
       { name: "Security", link: "/settings/security" }
-    ],
+    ]
   }
 ];
-
 
 
   const notifications = [

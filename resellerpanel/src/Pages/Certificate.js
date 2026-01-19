@@ -1,6 +1,6 @@
 import React from "react";
 import { FaDownload } from "react-icons/fa";
-import "./Certificates.css";
+import "../assets/css/Certificates.css";
 
 export default function Certificates({ completedCourses = [] }) {
   const dummyReseller = {

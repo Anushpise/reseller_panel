@@ -9,7 +9,7 @@ const ActivationSuccess = () => {
     <Box sx={{ display: "flex", justifyContent: "center", mt: 12 }}>
       <Paper sx={{ width: 450, p: 4, textAlign: "center" }}>
         <Typography variant="h4" fontWeight={700}>
-          Account Activated 🎉
+          Account Activated 
         </Typography>
 
         <Typography mt={2}>

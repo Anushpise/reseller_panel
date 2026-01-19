@@ -5,9 +5,7 @@ import Footer from "./Components/Footer";
 
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
-
 import SalesDashboard from "./Pages/SalesDashboard";
-import TransactionHistory from "./Pages/TransactionHistory";
 import MonthlyStatement from "./Pages/MonthlyStatement";
 
 import CompanySettings from "./Pages/BrandingPage";
@@ -17,69 +15,77 @@ import CoursePreview from "./Pages/coursepreview";
 import SetPrice from "./Pages/SetPrice";
 
 import RecentOrders from "./Pages/Orders";
-import EnrollmentPage from "./Pages/Enrollmentpage";
 
-import Invoice from "./Pages/Invoice";
 import InvoiceDownload from "./Pages/Download";
 
 import MyCourses from "./Pages/MyCourse";
-import Certificates from "./Pages/Certificate";
 
 import Notifications from "./Pages/Notification";
 import SubscriptionPage from "./Pages/Subscription";
-import SubscriptionPayment from "./Pages/SusbscriptionPayment";
 import ActivationSuccess from "./Components/activation";
-import ProfileSettings from "./Components/ProfileAccount";
 import SecuritySettings from "./Pages/Security";
+import PaymentPage from "./Pages/SusbscriptionPayment";
+import SuccessPage from "./Pages/Success";
+import DemoAccess from "./Pages/DemoCourse";
+import InvoiceSettings from "./Pages/Invoicesettings";
+import DemoControlPanel from "./Pages/DemocontrolPanel";
+import EnrollmentDetailsModal from "./Pages/Enrollmentpage";
+import ResellerProfile from "./Pages/ResellerProfile";
+import PrivacyPolicy from "./Pages/PrivacyPolicy";
+import TermsConditions from "./Pages/Terms&Condition";
+import RefundPolicy from "./Pages/RefundPolicy";
 
 const App = () => {
   return (
     <BrowserRouter>
       <Navbar />
 
-      <Routes>
+    <Routes>
+``
+  <Route path="/" element={<SalesDashboard />} />
+  <Route path="/dashboard/monthly" element={<MonthlyStatement />} />
 
-        <Route path="/home" element={<SalesDashboard />} />
-        <Route path="/home/earnings" element={<SalesDashboard />} />
-        <Route path="/home/payouts" element={<TransactionHistory />} />
+  <Route path="/register" element={<Register />} />
+  <Route path="/onboarding/subscription" element={<SubscriptionPage />} />
+  <Route path="/onboarding/payment" element={<PaymentPage />} />
+  <Route path="/onboarding/activation" element={<ActivationSuccess />} />
+  <Route path="/onboarding/success" element={<SuccessPage />} />
 
-        <Route path="/branding/settings" element={<CompanySettings />} />
-        <Route path="/branding/theme" element={<CompanySettings />} />
-        <Route path="/branding/invoices" element={<Invoice />} />
+  <Route path="/courses" element={<AvailableCourses />} />
+  <Route path="/courses/preview/:id" element={<CoursePreview />} />
+  <Route path="/courses/price/:id" element={<SetPrice />} />
+  <Route path="/demo" element={<DemoAccess />} />
 
-        <Route path="/courses" element={<AvailableCourses />} />
-        <Route path="/courses/preview/:id" element={<CoursePreview />} />
-        <Route path="/courses/price/:id" element={<SetPrice />} />
-        <Route path="/courses/demo" element={<AvailableCourses />} />
+  <Route path="/branding" element={<CompanySettings />} />
+  <Route path="/branding/invoice-config" element={<InvoiceSettings />} />
 
-        <Route path="/orders" element={<RecentOrders />} />
-        <Route path="/orders/:id" element={<EnrollmentPage />} />
+  <Route path="/access/my-learning" element={<MyCourses />} />
+  <Route path="/access/demo-control" element={<DemoControlPanel />} />
 
-        <Route path="/earnings" element={<SalesDashboard />} />
-        <Route path="/earnings/payouts" element={<TransactionHistory />} />
-        <Route path="/earnings/statement" element={<MonthlyStatement />} />
+  <Route path="/finance/earnings" element={<SalesDashboard />} />
+  <Route path="/finance/billing" element={<InvoiceDownload />} />
+  <Route path="/finance/statement" element={<MonthlyStatement />} />
 
-        <Route path="/gst/config" element={<Invoice />} />
-        <Route path="/invoices/send" element={<InvoiceDownload />} />
+ 
+  <Route path="/orders" element={<RecentOrders />} />
+  <Route path="/orders/details" element={<EnrollmentDetailsModal />} />
 
-        <Route path="/mylearning/courses" element={<MyCourses />} />
-        <Route path="/mylearning/certificates" element={<Certificates />} />
+ 
+  <Route path="/notifications" element={<Notifications />} />
 
-        <Route path="/subscription" element={<SubscriptionPage />} />
-        <Route path="/onboarding/payment" element={<SubscriptionPayment />} />
-        <Route path="/onboarding/activation" element={<ActivationSuccess/>} />
 
-        <Route path="/notification" element={<Notifications />} />
+  <Route path="/settings/profile" element={<ResellerProfile />} />
+  <Route path="/settings/security" element={<SecuritySettings />} />
 
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-     
 
-        <Route path="/settings/profile" element={<ProfileSettings />} />
+  <Route path="/login" element={<Login />} />
 
-        <Route path="/settings/security" element={<SecuritySettings />} />
+  <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+  <Route path="/terms-and-conditions" element={<TermsConditions />} />
+  <Route path="/refund-policy" element={<RefundPolicy />} />
 
-      </Routes>
+</Routes>
+
 
       <Footer />
     </BrowserRouter>
