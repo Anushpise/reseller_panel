@@ -7,6 +7,7 @@ module.exports = {
       jsx: true,
     },
     requireConfigFile: false
+    
   },
   env: {
     browser: true,
